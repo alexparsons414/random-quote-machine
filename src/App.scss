@@ -1,4 +1,5 @@
 @import './common/colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 html{
   background-color: $primary-color;
@@ -12,11 +13,18 @@ html{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: 1s ease;
   padding: 50px;
 }
 
 #text, #author{
-  color: $font-secondary;
+  font-family: 'Comfortaa', serif;
+  font-size: xx-large;
+  font-weight: 1000;
+  letter-spacing: .05em;
+  line-height: 150%;
+  color: $primary-color;
+  text-shadow: #292929 0px 2.5px 10px;
 }
 
 #author{
@@ -24,19 +32,50 @@ html{
 }
 
 #new-quote{
+  font-family: 'Comfortaa', serif;
+  font-size: large;
+  color: #a0a0a0;
+  text-shadow: #dfdfdf 0px 2.5px 10px;
   float: right;
   border: #9AA7B1 2px solid;
   border-radius: 5px;
   background-color: #9AA7B1;
   padding: 10px;
-  color: $font-secondary;
+  background-color: $primary-color;
+  box-shadow: 2px 2px 10px #a8a8a8;
 
   &:hover {
     cursor: pointer;
-    background-color: #7D8E9B;
+    background-color: rgb(155, 151, 125);
+    color: white;
+  }
+
+  &:active{
+    transform: scale(88%) translate(4px, 4px);
+    box-shadow: none;
   }
 }
 
-a, a:visited, a:hover, a:active{
-  color: inherit;
+a, a:visited{
+  font-family: 'Comfortaa', serif;
+  font-size: large;
+  color: #a0a0a0;
+  text-shadow: #dfdfdf 0px 2.5px 10px;
+  border: #9AA7B1 2px solid;
+  border-radius: 5px;
+  background-color: #9AA7B1;
+  padding: 10px;
+  background-color: $primary-color;
+  box-shadow: 2px 2px 10px #a8a8a8;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(155, 151, 125);
+    color: white;
+  }
+
+  &:active{
+    transform: scale(88%) translate(4px, 4px);
+    box-shadow: none;
+  }
 }

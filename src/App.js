@@ -3,21 +3,26 @@ import QuoteApi from './apis/QuoteApi';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { useDispatch } from 'react-redux';
+import { setQuote } from './features/quotes/quoteSlice';
 
 
 function App() {
   const [quoteData, setQuoteData] = useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
     QuoteApi.get().then(response => {
       setQuoteData(response.data[0]);
     });
+    dispatch(setQuote(quoteData));
   }, []);
 
   const handleClick = () => {
     QuoteApi.get().then(response => {
       setQuoteData(response.data[0]);
     });
+    dispatch(setQuote(quoteData));
   }
 
   return (
